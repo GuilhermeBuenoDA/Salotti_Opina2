@@ -1,0 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*main*/
+
+.comeco_conteiner {
+  display: flex;
+  background: linear-gradient(135deg, #1A071F, #2A0E2F);
+  width: 90%;
+}
+
+/*fim main*/
