@@ -1,0 +1,114 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+header {
+  background: linear-gradient(180deg, #0b0b10, #0a0a0f);
+  border-bottom: 1px solid #1a1a2e;
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  justify-content: space-between;
+}
+hr {
+  color: #1a1a2e;
+}
+h1 {
+  color: #ededed;
+  font-weight: 500;
+  text-align: center;
+  display: block;
+  margin: auto;
+
+}
+
+span {
+  background: linear-gradient(90deg, #b026ff, #e040ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.inicial {
+  background: linear-gradient(135deg, #7a00ff, #a100ff, #c84dff);
+  box-shadow: 0 0 20px rgba(161, 0, 255, 0.6);
+  border-radius: 0.5rem;
+  height: 50px;
+  margin: 1rem;
+}
+.começo {
+    transition: 0.3s;
+}
+.começo:hover {
+  transform: translateY(-4px);
+}
+.começo,
+.meio,
+.fim {
+  display: flex;
+}
+.fim {
+    margin-right: -10rem;
+}
+.meio {
+  gap: 1.2rem;
+}
+.btn1:hover,
+.btn2:hover,
+.btn3:hover {
+  animation: animação 1s forwards ease-in-out,ease-in-out;
+  background-color: #602c68;
+}
+.btn1,
+.btn2,
+.btn3 {
+  padding: 0.2rem;
+  background-color: transparent;
+  color: #b5a6a6;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  margin: 1.2rem 0;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  text-align: center;
+  display: flex;
+}
+.btn4 {
+  background: linear-gradient(90deg, #a100ff, #d100ff);
+  color: white;
+  padding: 0.5rem 1rem;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  display: flex;
+  border-radius: 0.5rem;
+  margin: 1.2rem 0;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  text-align: center;
+  transition: 0.3s;
+}
+.btn4:hover {
+  background: linear-gradient(90deg, #B026FF, #E040FF);
+  box-shadow: 0 0 15px rgba(161, 0, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn1:focus,
+.btn2:focus,
+.btn3:focus {
+  background: linear-gradient(90deg, #a100ff, #d100ff);
+  color: white;
+  box-shadow: 0 0 10px rgba(161, 0, 255, 0.5);
+}
+.btn1 img,
+.btn2 img,
+.btn3 img,
+.btn4 img {
+  height: 30px;
+  margin: 5px;
+}
+@keyframes animação {
+  to {
+    transform: scale(1.1);
+  }
+}
