@@ -99,7 +99,7 @@ body {
 }
 .butoes-cima {
   display: flex;
-  margin: auto;
+  margin: 1rem auto;
   justify-content: center;
   gap: 1.5rem;
 }
@@ -107,30 +107,148 @@ body {
   padding: 1.5rem;
   font-size: 1.5rem;
   border-radius: 1rem;
-  background: linear-gradient(90deg, #8A00FF 0%, #C000FF 100%);
+ background: linear-gradient(90deg, #7B2CFF, #A100FF);
+  box-shadow: 0 0 25px rgba(161, 0, 255, 0.6);
   color: aliceblue;
-    box-shadow:
-    0 0 12px rgba(161, 0, 255, 0.45),
-    0 0 24px rgba(161, 0, 255, 0.25),
-    0 8px 30px rgba(90, 0, 140, 0.35);
-    transition: 0.3s ease-in-out;
-
+  transition: 0.3s ease-in-out;
 }
-.button1-cima:hover,.button2-cima:hover {
+.button1-cima:hover,
+.button2-cima:hover {
   transform: translateY(-2px) scale(1.03);
   background-color: rgb(146, 39, 104);
 }
 .button2-cima {
-   padding: 1.5rem;
+  padding: 1.5rem;
   font-size: 1.5rem;
   border-radius: 1rem;
   background-color: rgb(117, 31, 83);
   color: aliceblue;
-    transition: 0.3s ease-in-out;
-
+  transition: 0.3s ease-in-out;
 }
 .seta {
   font-size: 2rem;
   text-align: center;
   justify-content: center;
+}
+.linha {
+  border: #c000ff;
+  height: 2px;
+}
+
+/*fim parte1*/
+.parte2 {
+  background-color: #03e9f4;
+  display: flex;
+}
+.titulo1-parte2 {
+  letter-spacing: -1px;
+  font-size: 5rem;
+  text-align: start;
+}
+.titulo2-parte2 {
+   letter-spacing: -1px;
+  font-size: 5rem;
+  text-align: start;
+  color: #a1a1aa;
+}
+.topico1,
+.topico2 {
+  display: flex;
+}
+.topico1 img,
+.topico2 img {
+  height: 60px;
+  display: block;
+  margin: auto 1rem;
+  padding: 0.5rem;
+  border: rgb(32, 10, 63) 1px solid;
+  background-color: #1a0f2e;
+  border-radius: 0.5rem;
+}
+.esquerda {
+  background-color: black;
+  width: 50%;
+  padding: 1rem;
+}
+.p-topico {
+  margin: 1rem 0;
+  color: #a1a1aa;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.subtitulo {
+  margin: 1rem 0;
+  color: #a1a1aa;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.esquerda h2 {
+  color: #ffff;
+  font-weight: 400;
+}
+.direita {
+  background-color: black;
+  width: 50%;
+}
+.elemento1 {
+  width: 85%;
+  height: 90%;
+  border-radius: 2rem;
+background: radial-gradient(circle at top left, #3b004f, #120016);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: block;
+  margin: 1rem auto;
+  padding: 6rem 0 0 0;
+
+}
+.elemento1:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(168, 0, 255, 0.15);
+}
+.elemento1flex {
+  display: flex;
+  gap: 1rem;
+}
+.circulo1 {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+ background: radial-gradient(circle, #7B2CFF, #2A0033);
+  box-shadow: 0 0 10px rgba(168, 0, 255, 0.3);
+  animation: pulsar 2s infinite ease-out;
+}
+.barrinha1 {
+  height: 1.2rem;
+  width: 8rem;
+background: #6B6B6B;
+  border-radius: 0.5rem;
+}
+.barrinha2 {
+  margin-top: 1rem;
+   height: 0.8rem;
+  width: 15rem;
+  background: #3A3A3A;
+  border-radius: 0.5rem;
+}
+.barrinha3 {
+   height: 1.2rem;
+  width: 5rem;
+  background: linear-gradient(90deg, #7B2CFF, #A100FF);
+  border-radius: 1rem;
+  box-shadow: 0 0 12px rgba(161, 0, 255, 0.5);
+}
+.conteudo1{
+  border: 2px black solid;
+  width: 80%;
+  display: flex;
+  padding: 1rem;
+ background: #0A0A0A;
+   margin: 1rem auto;
+   border-radius: 1rem;
+   box-shadow: 
+    0 0 0 1px rgba(255,255,255,0.05),
+    0 10px 30px rgba(168, 0, 255, 0.15);
+}
+.section2 {
+  padding: 2rem 0 0 0;
 }
