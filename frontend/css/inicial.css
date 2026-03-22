@@ -8,6 +8,10 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #050505;
 }
+.inicio {
+  min-height: 100vh;
+  width: 100%;
+}
 .circulo {
   margin-left: 10px;
   margin-top: 3px;
@@ -107,7 +111,7 @@ body {
   padding: 1.5rem;
   font-size: 1.5rem;
   border-radius: 1rem;
- background: linear-gradient(90deg, #7B2CFF, #A100FF);
+  background: linear-gradient(90deg, #7b2cff, #a100ff);
   box-shadow: 0 0 25px rgba(161, 0, 255, 0.6);
   color: aliceblue;
   transition: 0.3s ease-in-out;
@@ -139,6 +143,8 @@ body {
 .parte2 {
   background-color: #03e9f4;
   display: flex;
+  min-height: 100vh;
+  width: 100%;
 }
 .titulo1-parte2 {
   letter-spacing: -1px;
@@ -146,7 +152,7 @@ body {
   text-align: start;
 }
 .titulo2-parte2 {
-   letter-spacing: -1px;
+  letter-spacing: -1px;
   font-size: 5rem;
   text-align: start;
   color: #a1a1aa;
@@ -154,21 +160,22 @@ body {
 .topico1,
 .topico2 {
   display: flex;
+  margin-top: 2rem;
 }
 .topico1 img,
 .topico2 img {
-  height: 60px;
+  height: 70px;
   display: block;
   margin: auto 1rem;
   padding: 0.5rem;
-  border: rgb(32, 10, 63) 1px solid;
+  border: 1px solid rgba(177, 0, 255, 0.12);
   background-color: #1a0f2e;
   border-radius: 0.5rem;
 }
 .esquerda {
   background-color: black;
   width: 50%;
-  padding: 1rem;
+  padding: 2rem;
 }
 .p-topico {
   margin: 1rem 0;
@@ -194,15 +201,15 @@ body {
   width: 85%;
   height: 90%;
   border-radius: 2rem;
-background: radial-gradient(circle at top left, #3b004f, #120016);
+  background: radial-gradient(circle at top left, #3b004f, #120016);
   border: 1px solid rgba(255, 255, 255, 0.05);
   display: block;
   margin: 1rem auto;
   padding: 6rem 0 0 0;
-
+  transition: all 1s ease-in-out;
 }
 .elemento1:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   box-shadow: 0 10px 30px rgba(168, 0, 255, 0.15);
 }
 .elemento1flex {
@@ -213,42 +220,229 @@ background: radial-gradient(circle at top left, #3b004f, #120016);
   height: 3rem;
   width: 3rem;
   border-radius: 50%;
- background: radial-gradient(circle, #7B2CFF, #2A0033);
+  background: radial-gradient(circle, #7b2cff, #2a0033);
   box-shadow: 0 0 10px rgba(168, 0, 255, 0.3);
   animation: pulsar 2s infinite ease-out;
 }
 .barrinha1 {
   height: 1.2rem;
   width: 8rem;
-background: #6B6B6B;
+  background: #6b6b6b;
   border-radius: 0.5rem;
 }
 .barrinha2 {
   margin-top: 1rem;
-   height: 0.8rem;
+  height: 0.8rem;
   width: 15rem;
-  background: #3A3A3A;
+  background: #3a3a3a;
   border-radius: 0.5rem;
 }
 .barrinha3 {
-   height: 1.2rem;
+  height: 1.2rem;
   width: 5rem;
-  background: linear-gradient(90deg, #7B2CFF, #A100FF);
+  background: linear-gradient(90deg, #7b2cff, #a100ff);
   border-radius: 1rem;
   box-shadow: 0 0 12px rgba(161, 0, 255, 0.5);
 }
-.conteudo1{
+.conteudo1 {
   border: 2px black solid;
   width: 80%;
   display: flex;
   padding: 1rem;
- background: #0A0A0A;
-   margin: 1rem auto;
-   border-radius: 1rem;
-   box-shadow: 
-    0 0 0 1px rgba(255,255,255,0.05),
+  background: #0a0a0a;
+  margin: 3rem auto;
+  transition: 0.3s;
+  border-radius: 1rem;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05),
     0 10px 30px rgba(168, 0, 255, 0.15);
 }
+.conteudo1:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
 .section2 {
   padding: 2rem 0 0 0;
+}
+/*fim parte 2*/
+.parte3-titulo1 {
+  color: #f2f2f2;
+  text-align: start;
+  font-size: 6rem;
+  margin: 0;
+}
+.parte3-titulo2 {
+ color: #b100ff;
+  text-shadow:
+    0 0 8px rgba(177, 0, 255, 0.35),
+    0 0 22px rgba(177, 0, 255, 0.22),
+    0 0 45px rgba(177, 0, 255, 0.12);
+  text-align: start;
+  font-size: 6rem;
+  margin: 0;
+}
+.p-parte3 {
+  font-size: 1.3rem;
+  color: #a1a1aa;
+  font-weight: 350;
+  margin: 1.5rem 0;
+}
+.a-parte3 {
+  font-size: 1.2rem;
+  text-decoration-line: none;
+  font-weight: 300;
+  color: #b100ff;
+}
+.parte3 {
+  padding: 1rem 3rem;
+  background-color: #050305;
+  background: radial-gradient(
+    circle at 20% 30%,
+    rgba(161, 0, 255, 0.18),
+    transparent 40%
+  );
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+}
+.caixa1-parte3 {
+  width: 50%;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 1rem;
+  padding: 1rem;
+  background: linear-gradient(
+    180deg,
+    rgba(63, 0, 71, 0.95) 0%,
+    rgba(31, 0, 35, 0.98) 100%
+  );
+  transition: all 0.5s ease;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+.caixa1-parte3:hover,
+.caixa1-parte3:hover img,
+.caixa2-parte3:hover img,
+.caixa2-parte3:hover {
+  transform: translateY(-10px) scale(1.02);
+  border: 1px solid rgba(161, 0, 255, 0.6);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(161, 0, 255, 0.25),
+    0 0 60px rgba(161, 0, 255, 0.18);
+}
+
+.caixa1-parte3 img,
+.caixa2-parte3 img {
+  height: 60px;
+   transition: all 0.5s ease;
+  padding: 0.5rem;
+ background: #090909;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+.caixa1-parte3 h2,
+.caixa2-parte3 h2 {
+  color: #f2f2f2;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.caixa1-parte3 p,
+.caixa2-parte3 p {
+  color: #a1a1aa;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 1rem 0;
+}
+
+.caixa2-parte3 {
+  width: 40%;
+  border-radius: 1rem;
+  padding: 1rem ;
+  background: linear-gradient(
+    180deg,
+    rgba(63, 0, 71, 0.95) 0%,
+    rgba(31, 0, 35, 0.98) 100%
+  );
+  height: 40%;
+  margin-top: 3rem;
+ border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.35s ease;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+.caixas-parte3 {
+  display: flex;
+  gap: 2rem;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+/*fim parte3*/
+.parte4 {
+   min-height: 100vh;
+  width: 100%;
+  background-color: #050505;
+  
+}
+.caixa1-parte4 {
+  width: 99%;
+  min-width: 100vh;
+  display: block;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 2rem;
+  height: 100%;
+  background: linear-gradient(
+  180deg,
+  rgba(63, 0, 71, 0.9),
+  rgba(25, 0, 30, 0.95)
+);
+box-shadow:
+    0 20px 60px rgba(0,0,0,0.45),      
+    0 0 40px rgba(161,0,255,0.12),       
+    inset 0 0 0 1px rgba(255,255,255,0.03);
+
+border: 1px solid rgba(255,255,255,0.06);
+}
+.caixa1-parte4 h1 {
+  font-size: 7rem;
+}
+.caixa1-parte4 span {
+  color:#B100FF;
+}
+.caixa1-parte4 p {
+  color: #a1a1aa;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.caixa1-parte4 img {
+  width: 180px;
+  display: block;
+  margin: auto;
+}
+.caixa1-parte4 button {
+  display: block;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: linear-gradient(180deg, #C000FF 0%, #8A00FF 100%);
+  font-size: 2rem;
+  border-radius: 1rem ;
+  color: #ffff;
+  box-shadow:
+  0 0 12px rgba(177,0,255,0.5),
+  0 0 30px rgba(177,0,255,0.3),
+  0 10px 30px rgba(90,0,140,0.4);
+  transition: all 1s ease-in-out;
+}
+.caixa1-parte4 button:hover {
+  box-shadow:
+    0 0 18px rgba(177,0,255,0.7),
+    0 0 40px rgba(177,0,255,0.4),
+    0 15px 40px rgba(90,0,140,0.5);
 }
