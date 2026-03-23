@@ -2,12 +2,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: white;
 }
 
 /*main*/
 
 main {
-  padding: 0 0.7%;
+  padding: 0 1%;
   background: linear-gradient(180deg, #0b0b10, #0a0a0f);
 }
 
@@ -18,9 +19,8 @@ main {
   box-shadow:
     0 0 20px rgba(168, 0, 255, 0.2),
     inset 0 0 10px rgba(255, 0, 255, 0.1);
-  width: 99%;
   border-radius: 0 0 1rem 2rem;
-  height: 10rem;
+  height: 14rem;
   width: auto;
   color: white;
 }
@@ -28,14 +28,13 @@ main {
 .comeco_bemvindo {
   display: flex;
   gap: 2rem;
-
-  h2 {
-    font-size: 4rem;
-  }
 }
 
 .bemvindo_imagem {
-  background: linear-gradient(135deg, #9738FF);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
   height: 5rem;
   width: 5rem;
   border-radius: 0.8rem;
@@ -46,10 +45,64 @@ main {
     width: auto;
   }
   
+  
+}
 
-}
+
 .bemvindo_texto {
-  gap: 10rem;
+  h2 {
+    font-size: 4rem;
+    height: 5.5rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 6px;
+  }
+  
+  p {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 500;
+    color: #9D9AA8;
+    
+  }
+  
+  span {
+    color: rgb(127, 0, 255);
+  }
 }
+
+.titulos {
+  font-family: 'Syne', sans-serif;
+  padding: 5rem 0 2rem 0;
+  
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+.container_estatisticas {
+  display: flex;
+}
+
+.destatistica {
+  height: 30%;
+  width: 30%;
+  
+  img {
+    
+  }
+}
+
+
 
 /*fim main*/
+
+/*footer*/
+
+
+
+
+
+/*fim footer*/
