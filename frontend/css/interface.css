@@ -8,7 +8,7 @@
 /*main*/
 
 main {
-  padding: 0 1%;
+  padding: 0 1.5%;
   background: linear-gradient(180deg, #0b0b10, #0a0a0f);
 }
 
@@ -20,7 +20,7 @@ main {
     0 0 20px rgba(168, 0, 255, 0.2),
     inset 0 0 10px rgba(255, 0, 255, 0.1);
   border-radius: 0 0 1rem 2rem;
-  height: 14rem;
+  height: 12rem;
   width: auto;
   color: white;
 }
@@ -39,13 +39,13 @@ main {
   width: 5rem;
   border-radius: 0.8rem;
   box-shadow: 0 0 0 0 #9738FF59;
-  
+
   img {
     height: 3rem;
     width: auto;
   }
-  
-  
+
+
 }
 
 
@@ -54,20 +54,19 @@ main {
     font-size: 4rem;
     height: 5.5rem;
     font-family: 'Syne', sans-serif;
-    font-weight: 700;
+    font-weight: 550;
     margin: 0;
-    letter-spacing: 6px;
   }
-  
+
   p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     letter-spacing: 2px;
     font-family: 'Nunito Sans', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     color: #9D9AA8;
-    
+
   }
-  
+
   span {
     color: rgb(127, 0, 255);
   }
@@ -76,33 +75,60 @@ main {
 .titulos {
   font-family: 'Syne', sans-serif;
   padding: 5rem 0 2rem 0;
-  
+
   h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
 .container_estatisticas {
   display: flex;
+  gap: 2rem;
 }
 
 .destatistica {
-  height: 30%;
-  width: 30%;
-  
+  height: 9rem;
+  width: 32%;
+  border-radius: 1rem;
+  background: #3B0F3F;
+  padding: 2rem 0;
+  display: flex;
+  border: 1px solid rgba(64, 45, 173, 0.737);
+  transition: all 0.5s ease-out;
   img {
-    
+
+  }
+
+  p {
+    font-family: 'Nunito Sans', sans-serif;
+    color: #9D9AA8;
+    align-items: end;
+  }
+
+  h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
   }
 }
 
+.destatistica:hover {
+  display: flex;
+  box-shadow:
+    0 0 20px rgba(168, 0, 255, 0.2),
+    inset 0 0 10px rgba(255, 0, 255, 0.1);
+  transform:translateY(-4px);
+}
 
+.destatistica1 {
+  display: flex;
+  align-items: center;
+
+
+}
+
+.destatistica2 {
+  display: flex;
+  align-items: end;
+}
 
 /*fim main*/
-
-/*footer*/
-
-
-
-
-
-/*fim footer*/
