@@ -1,7 +1,8 @@
 footer {
   padding: 1rem;
   background: linear-gradient(180deg, #2a0826, #1f061c);
-  border-top: 1px solid #4A0D4F;
+  border-top: 1px solid #4a0d4f;
+  font-family: "Poppins", sans-serif;
 }
 
 .footer-flex {
@@ -37,14 +38,14 @@ footer {
   margin-top: 1rem;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #4A0D4F;
+  border-bottom: 1px solid #4a0d4f;
 }
 
 .links-rapidos h2 {
   color: #f2f2f2;
   margin-bottom: 1rem;
   font-weight: 400;
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
 }
 
 .links-rapidos a {
@@ -63,7 +64,7 @@ footer {
   0% {
     transform: translateX(0);
   }
-  
+
   100% {
     transform: translateX(8px);
   }
