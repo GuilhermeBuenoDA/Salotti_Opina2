@@ -134,6 +134,15 @@ body {
     font-size: 1.1rem;
     display: block;
   }
+  .buttonnao {
+    text-decoration: none;
+    color: #a1a1aa;
+    font-size: 1.1rem;
+    display: block;
+    background-color: transparent;
+    border: none;
+    margin: auto;
+  }
   
 .conteiner a:hover {
     color: #7a00ff;

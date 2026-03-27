@@ -22,7 +22,7 @@ function renderLogin() {
                 <button type="submit" class="button-entrar">Entrar na Plataforma</button><br>
             </form>
             <p id="p"></p>
-            <button id="cadastro">Não tem cadastro?</button>
+            <button id="cadastro" class="buttonnao">Não tem cadastro?</button>
         </div>
 
     `;
@@ -95,7 +95,7 @@ function renderCadastro() {
                 
             </form>
             <p id="p"></p>
-        <button id="login" class ="bcadastro">Já tem cadastro?</button>
+        <button id="login" class="buttonnao">Já tem cadastro?</button>
         </div>
     `;
     const p = document.getElementById("p")
