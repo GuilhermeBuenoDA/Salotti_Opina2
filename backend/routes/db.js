@@ -7,8 +7,10 @@ const db = mysql.createPool({
     host: '172.30.2.189',
     user: 'back',
     password: 'rrnea.@2009',
-    database: 'app_db',
+    database: 'salotti_db',
     port: '3306'
 })
+
+
 
 export default db
