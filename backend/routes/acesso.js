@@ -9,59 +9,53 @@ const roteador = express.Router()
 async function login(req, res) {
     const { Email, Senha } = req.body;
 
-    const Senha
+    try {
+        const [usuarios] = await db.query(
+            "SELECT * FROM usuarios WHERE email = ?",
+            [Email]
+        );
 
-    const [encontrado] = await db.query(
-        "SELECT * FROM usuarios WHERE email = ?",
-        [Email]
-    );
+        if (usuarios.length === 0) {
+            return res.status(401).json({ message: "Usuario ou Senha invalido" });
+        }
+        const usuario = usuarios[0];
 
-    if (encontrado.length > 0) {
+        const senhaCerta = await bcrypt.compare(Senha, usuario.senha)
 
-        const usuario = encontrado[0];
+        if (!senhaCerta) {
+            return res.status(401).json({ message: "Usuarios ou senha errado" })
+        }
 
         const token = jwt.sign(
-            { id: usuario.id, email: usuario.email, role: usuario.role },
+            { id: usuario.id, role: usuario.roles },
             segredo,
             { expiresIn: "1h" }
         )
-        res.status(200).json({
-            message: "login valido  ",
-            token: token
-        });
-    } else {
-        res.status(401).json({ message: "Usuario ou Senha invalido" });
+        return res.status(200).json({ message: "login valido", token: token });
+
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ message: "Erro interno" })
     }
 }
 
 async function cadastrar(req, res) {
+
+    const { Email, Senha, Nome, role } = req.body
+
     try {
 
-        const { Email, Senha, Nome } = req.body
-
-        const senhaCriptografada =  await bcrypt.hash(Senha, 10)
-
-        let cargo = "aluno";
-
-        const [roles] = await db.query(
-            "SELECT id FROM roles WHERE nome = ?",
-            [cargo]
-        )
-
-        if (roles.length === 0) {
-            return res.status(400).json({ message: "cargo invlido" })
-        }
-
-        const roleId = roles[0].id;
+        const senhaCriptografada = await bcrypt.hash(Senha, 10)
 
         const [resultado] = await db.query(
-            "INSERT INTO usuarios(nome,email,senha,roles_id) VALUES(?,?,?,?)",
-            [Nome, Email, senhaCriptografada, roleId]
+            "INSERT INTO usuarios(nome,email,senha,roles) VALUES(?,?,?,?)",
+            [Nome, Email, senhaCriptografada, role]
         )
-        if (resultado.affectedRows > 0) {
-            return res.status(201).json({ message: "Cadastrado com sucessso" })
+        if (resultado.affectedRows === 0) {
+            return res.status(401).json({ message: "Erro ao cadastrar" })
         }
-        return res.status(401).json({ message: "Erro ao cadastrar" })
+        return res.status(201).json({ message: "Cadastrado com sucessso" })
+
 
     } catch (erro) {
         console.error(erro)
