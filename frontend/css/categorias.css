@@ -6,27 +6,109 @@
 }
 
 main {
-  padding:  100rem 1.5% 4% 1.5%;
+  padding: 0 2% 0 2%;
   background: linear-gradient(180deg, #0b0b10, #0a0a0f);
 }
 
-.comeco_setores {
+.dtexto_setores {
   display: flex;
-  background-color: navy;
-}
+  align-items: center;
+  flex-direction: column;
 
-.setores_imagem {
-  
-}
-
-.dsetores {
   h2 {
-    font-size:3.5rem;
+    font-size:4rem;
     font-family: 'Syne', sans-serif;
     font-weight: 550;
     
   }
+  p {
+    font-size: 1.1rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    color: #9D9AA8;
+  }
   span {
     color: rgb(127, 0, 255);
+  }
+}
+
+.conteiner_setores {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dsetores_linha1 {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  gap: 2rem;
+}
+
+.dsetores1 {
+  display: flex;
+  background-color: navy;
+  height: 16rem;
+  width: 53%;
+  border-radius: 1rem;
+  cursor: pointer;
+
+}
+
+.dtexto_setores1 {
+  h3{
+  font-size: 1rem;
+  font-family: 'Syne', sans-serif;
+  font-weight: 550;
+ }
+ p {
+    font-size: 1.2rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    color: #9D9AA8;
+ }
+}
+
+.dsetores2 {
+  display: flex;
+  background-color: navy;
+  height: 16rem;
+  width: 53%;
+  border-radius: 1rem;
+  cursor: pointer;
+  h3{
+    font-size: 1rem;
+  font-family: 'Syne', sans-serif;
+  font-weight: 550;
+ }
+ p {
+    font-size: 1.2rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    color: #9D9AA8;
+ }
+}
+
+
+
+.imagem_maiorsetor1 img {
+  height: 100%;
+  width: 12rem;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.dados_setores {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  img {
+  height: 1rem;
+  width: 1rem;
+  }
+  p {
+    font-size: 1.2rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    color: #9D9AA8;
   }
 }
