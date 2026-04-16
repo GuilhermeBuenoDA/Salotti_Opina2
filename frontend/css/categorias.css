@@ -14,15 +14,28 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 7rem 0 3rem 0;
+  gap: 0.8rem;
 
+  img {
+  background-color: #7F00FF;
+  background: linear-gradient(to bottom right, #7F00FF, #BC00FF);
+  box-shadow: 0 10px 15px -3px rgba(127, 0, 255, 0.5), 
+  0 4px 6px -4px rgba(127, 0, 255, 0.5);
+  height: 3.8rem;
+  width: 3.8rem;
+  padding: 0.75rem 0.75rem;
+  border-radius: 1.1rem;
+  }
+  
   h2 {
-    font-size:4rem;
+    font-size:4.1rem;
     font-family: 'Syne', sans-serif;
     font-weight: 550;
     
   }
   p {
-    font-size: 1.1rem;
+    font-size: 1.14rem;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 600;
     color: #9D9AA8;
@@ -36,60 +49,148 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 3rem;
 }
 
 .dsetores_linha1 {
   display: flex;
   align-items: center;
   margin: 1rem 0;
+  height: 100%;
+  width: 100%;
   gap: 2rem;
 }
 
 .dsetores1 {
   display: flex;
-  background-color: navy;
-  height: 16rem;
-  width: 53%;
+  background-color: rgb(48, 25, 52);
+  border: 0.1px solid #7F00FF;
+  height: 16.5rem;
+  width: 50%;
   border-radius: 1rem;
   cursor: pointer;
 
-}
-
-.dtexto_setores1 {
-  h3{
-  font-size: 1rem;
-  font-family: 'Syne', sans-serif;
-  font-weight: 550;
- }
- p {
-    font-size: 1.2rem;
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 600;
-    color: #9D9AA8;
- }
 }
 
 .dsetores2 {
   display: flex;
-  background-color: navy;
-  height: 16rem;
-  width: 53%;
+  background-color: rgb(48, 25, 52);
+  border: 0.1px solid #7F00FF;
+  height: 16.5rem;
+  width: 50%;
   border-radius: 1rem;
   cursor: pointer;
+}
+
+.dsetores3 {
+  display: flex;
+  background-color: rgb(48, 25, 52);
+  border: 0.1px solid #7F00FF;
+  height: 17rem;
+  width: 50%;
+  border-radius: 1rem;
+  cursor: pointer;
+  
+}
+
+.dsetores4 {
+  display: flex;
+  background-color: rgb(48, 25, 52);
+  border: 0.1px solid #7F00FF;
+  height: 17rem;
+  width: 50%;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+
+
+.dtexto_setores1 {
+  padding: 2rem 1rem 2rem 1.5rem;
   h3{
-    font-size: 1rem;
+  font-size: 1.5rem;
   font-family: 'Syne', sans-serif;
-  font-weight: 550;
+  font-weight: 0;
+  padding: 0 0 1rem 0;
  }
- p {
-    font-size: 1.2rem;
+p {
+    font-size: 1rem;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 600;
     color: #9D9AA8;
  }
+ a {
+   font-family: 'Nunito Sans', sans-serif;
+   color: #7F00FF;
+   text-decoration: none;
+   font-size: 0.9rem;
+ }
 }
 
+.dtexto_setores2 {
+  padding: 2rem 1.5rem;
+  h3{
+  font-size: 1.5rem;
+  font-family: 'Syne', sans-serif;
+  padding: 0 0 1rem 0;
+ }
+ p {
+    font-size: 1rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 550;
+    color: #9D9AA8;
+ }
+ a {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #7F00FF;
+  text-decoration: none;
+  font-size: 0.9rem;
+ }
+}
 
+.dtexto_setores3 {
+  padding: 1rem 1rem 2rem 1.5rem;
+  h3{
+  font-size: 1.5rem;
+  font-family: 'Syne', sans-serif;
+  font-weight: 0;
+  padding: 0 0 1rem 0;
+ }
+p {
+    font-size: 1rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    color: #9D9AA8;
+ }
+ a {
+   font-family: 'Nunito Sans', sans-serif;
+   color: #7F00FF;
+   text-decoration: none;
+   font-size: 0.9rem;
+ }
+}
+
+.dtexto_setores4 {
+  padding: 2rem 1.5rem;
+  h3{
+  font-size: 1.5rem;
+  font-family: 'Syne', sans-serif;
+  padding: 0 0 1rem 0;
+ }
+ p {
+    font-size: 1rem;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 550;
+    color: #9D9AA8;
+ }
+ a {
+  font-family: 'Nunito Sans', sans-serif;
+  color: #7F00FF;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding-top: 2rem;
+ }
+}
 
 .imagem_maiorsetor1 img {
   height: 100%;
@@ -97,18 +198,27 @@ main {
   border-radius: 1rem 0 0 1rem;
 }
 
+.setorestexto {
+  padding-bottom: 1rem;
+}
+
+.setorestexto1 {
+  padding-bottom: 1rem;
+}
+
 .dados_setores {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
+  padding-bottom: 0.8rem;
   img {
-  height: 1rem;
-  width: 1rem;
+  height: 1.1rem;
+  width: 1.1rem;
   }
   p {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-family: 'Nunito Sans', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     color: #9D9AA8;
   }
 }
