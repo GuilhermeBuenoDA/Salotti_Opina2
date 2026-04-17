@@ -64,48 +64,59 @@ main {
 .dsetores1 {
   display: flex;
   background-color: rgb(48, 25, 52);
-  border: 0.1px solid #7F00FF;
+  border: 0.1px solid #8000ff54;
   height: 16.5rem;
   width: 50%;
   border-radius: 1rem;
   cursor: pointer;
-
+  transition: all 1s ease-out;
 }
 
 .dsetores2 {
   display: flex;
   background-color: rgb(48, 25, 52);
-  border: 0.1px solid #7F00FF;
+  border: 0.1px solid #8000ff54;
   height: 16.5rem;
   width: 50%;
   border-radius: 1rem;
   cursor: pointer;
+  transition: all 1s ease-out;
 }
 
 .dsetores3 {
   display: flex;
   background-color: rgb(48, 25, 52);
-  border: 0.1px solid #7F00FF;
+  border: 0.1px solid #8000ff54;
   height: 17rem;
   width: 50%;
   border-radius: 1rem;
   cursor: pointer;
-  
+  transition: all 1s ease-out;
 }
 
 .dsetores4 {
   display: flex;
   background-color: rgb(48, 25, 52);
-  border: 0.1px solid #7F00FF;
+  border: 0.1px solid #8000ff54;
   height: 17rem;
   width: 50%;
   border-radius: 1rem;
   cursor: pointer;
+  transition: all 1s ease-out;
+}
+
+.dsetores1:hover,.dsetores2:hover,.dsetores3:hover,.dsetores4:hover {
+  transform: translateY(-10px);
+  border: 0.1px solid #7F00FF;
+  h3 {
+    color: #7F00FF;
+  }
 }
 
 
-
 .dtexto_setores1 {
+  height: 100%;
+  width: 50%;
   padding: 2rem 1rem 2rem 1.5rem;
   h3{
   font-size: 1.5rem;
@@ -192,10 +203,44 @@ p {
  }
 }
 
-.imagem_maiorsetor1 img {
-  height: 100%;
-  width: 12rem;
-  border-radius: 1rem 0 0 1rem;
+.verdetalhes {
+  transition: all 0s ease-out;
+}
+
+.verdatalhes:hover {
+  transform: translateX(8px);
+  width: 1rem;
+}
+
+.imagem_maiorsetor1 {
+  position: relative; /* IMPORTANTE */
+
+  img {
+    height: 100%;
+    width: 12rem;
+    border-radius: 1rem 0 0 1rem;
+
+  }
+
+  .pdaimagemmaior {
+    position: absolute;
+    top: 0;       /* canto superior */
+    left: 0;      /* canto esquerdo */
+    margin: 0;    /* evita deslocamento estranho */
+    margin: 1rem 0 0 1rem;
+    border-radius: 2rem;
+    background: rgba(34, 197, 94, 0.3);
+    border: 0.1px solid rgba(34, 197, 94, 0.5);
+    p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 4rem;
+    color: rgb(74, 222, 128);
+    }
+
+  }
 }
 
 .setorestexto {
@@ -221,4 +266,35 @@ p {
     font-weight: 500;
     color: #9D9AA8;
   }
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 80px auto 1fr auto 50px;
+  grid-template-columns: 1fr 4fr 1fr;
+  height: 100vh;
+  grid-template-areas: 
+  "header header header"
+  "left-aside banner right-aside"
+  "left-aside main right-aside"
+  "left-aside low content right-aside"
+  "footer footer footer";
+  grid-gap: 10px; padding: 10px;
+  font-weight: 600; font-size: 20px;
+}
+
+@media (max-width: 678px) {
+.container {
+  grid-template-rows: 50px 50px 50px 1fr
+  50px 50px 50px;
+  grid-template-columns: 1fr; 
+  grid-template-areas: 
+  "header"
+  "banner"
+  "left-aside"
+  "main"
+  "right-aside"
+  "low-content"
+  "footer";
+}
 }
