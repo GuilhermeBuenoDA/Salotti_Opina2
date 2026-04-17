@@ -287,9 +287,8 @@ const link = document.getElementById("link");
 
 function render() {
   const profD = document.getElementById("prof");
-  const p = document.getElementById("p")
 
-  fetch(`http://localhost:3000/buscar`)
+  fetch(`http://localhost:3000/professoresB`)
     .then(res => {
       if (!res.ok) {
         return res.json().then(err => {
@@ -301,7 +300,7 @@ function render() {
     .then(professores => {
       professores.forEach(prof => {
         const html = `
-      <div class="conteinerprincipal">
+      <div class="prof">
         <h1 class="prof-inicial">${prof.nome.charAt(0).toUpperCase()}</h1>
         <h1 class="titulo">${prof.nome}</h1>
         <p class="subtitulo-professor">${prof.subtitulDoProfessor || ''}</p>
@@ -339,7 +338,7 @@ function render() {
       });
     })
     .catch(error => {
-      p.textContent = error.message
+      console.log(error.message)
     })
 }
 

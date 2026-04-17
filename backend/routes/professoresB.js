@@ -24,6 +24,6 @@ async function Pegar(req, res) {
 
 
 
-roteador.get("/buscar", Pegar)
+roteador.get("/professoresB", Pegar)
 
 export default roteador

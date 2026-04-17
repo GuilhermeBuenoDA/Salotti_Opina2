@@ -1,5 +1,16 @@
 const main = document.getElementById("conteudo");
 
+async function apiRequest(url, opitons) {
+    const res = await fetch(url, opitons);
+    const data = await res.json()
+
+    if (!res.ok) {
+        throw new Error(data.message || "Erro de requisição")
+    }
+
+    return data;
+}
+
 function renderLogin() {
     main.innerHTML = `
     
@@ -8,10 +19,10 @@ function renderLogin() {
             <p>login para continuar</p>
 
             <form id="formLogin">
-                <label for="Email">Usuário</label><br>
-                <input id="Email" name="Email" type="email" placeholder="Digite seu email de usuário"><br>
-                <label for="Senha">Senha</label><br>
-                <input id="Senha" name="Senha" type="password" placeholder="Digite sua senha"><br>
+                <label for="email">Usuário</label><br>
+                <input id="email" name="email" type="email" placeholder="Digite seu email de usuário"><br>
+                <label for="senha">senha</label><br>
+                <input id="senha" name="senha" type="password" placeholder="Digite sua senha"><br>
                 <button type="submit" class="button-entrar">Entrar na Plataforma</button><br>
             </form>
             <p id="p"></p>
@@ -25,49 +36,37 @@ function renderLogin() {
     const trocarCadastro = document.getElementById("cadastro").addEventListener('click', renderCadastro);
 
 
-    formLogin.addEventListener("submit", function (event) {
+    formLogin.addEventListener("submit", async function (event) {
         event.preventDefault();
 
         const dados = Object.fromEntries(new FormData(formLogin))
 
-        if (!dados.Email || !dados.Senha) {
-            p.textContent = "Complete as informações"
-        } else
+        if (!dados.email || !dados.senha) {
+            return p.textContent = "Complete as informações"
+        } else {
+            try {
+                const data = await apiRequest("http://localhost:3000/login", {
+                    method: "POST",
+                    credentials: "include",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(dados)
+                });
+                localStorage.setItem("token", data.token);
 
-            fetch("http://localhost:3000/login", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(dados)
-            })
-                .then(res => {
-                    if (!res.ok) {
-                        return res.json().then(err => {
-                            throw new Error(err.message || "Erro interno")
-                        })
-                    }
-                    return res.json()
-                })
-                .then(data => {
+                p.textContent = data.message
 
-                    if (data.token) {
-                        localStorage.setItem("token", data.token);
-                        localStorage.setItem("nome", data.nome);
-                        p.textContent = "login realizado";
-                        setTimeout(() => {
-                            window.location.href = "../html/interface.html"
-                        }, 3000)
-                    } else {
-                        p.textContent = data.message;
-                    }
-
+                setTimeout(() => {
+                    window.location.href = "../html/interface.html"
                 })
-                .catch(error => {
-                    p.textContent = error.message;
-                })
+            } catch (error) {
+                p.textContent = error.message
+            }
+        }
 
     });
+
 
 }
 
@@ -85,12 +84,12 @@ function renderCadastro() {
                 </button>
             </div>
             <form id="formCadastro">
-                <label for="Nome">Usuário</label><br>
-                <input name="Nome" id="Nome" type="text" placeholder="Digite seu usuário"><br>
-                <label for="Senha">Senha</label><br>
-                <input id="Senha" name="Senha" type="password" placeholder="Digite sua senha"><br>
-                <label for="Email">Email</label><br>
-                <input id="Email" name="Email" type="email" placeholder="Digite sua email"><br>
+                <label for="nome">Usuário</label><br>
+                <input name="nome" id="nome" type="text" placeholder="Digite seu usuário"><br>
+                <label for="senha">senha</label><br>
+                <input id="senha" name="senha" type="password" placeholder="Digite sua senha"><br>
+                <label for="email">email</label><br>
+                <input id="email" name="email" type="email" placeholder="Digite sua email"><br>
                 <button type="submit" class="button-entrar">Entrar na Plataforma</button><br>
                 
             </form>
@@ -115,50 +114,42 @@ function renderCadastro() {
 
     btnb.addEventListener('click', () => {
         const senha = prompt("Digite a senha: ")
-        if(senha === "12345") {
+        if (senha === "12345") {
             alert("senha certa")
             cargo = "professor"
-        } else{
+        } else {
             alert("senha errada");
             cargo = null;
-        }    
+        }
     })
 
-    formCadastro.addEventListener("submit", (event) => {
+    formCadastro.addEventListener("submit", async function (event) {
         event.preventDefault();
 
 
         const dados = Object.fromEntries(new FormData(formCadastro))
 
-        if (!dados.Nome || !dados.Senha || !dados.Email || !cargo) {
+        if (!dados.nome || !dados.senha || !dados.email || !cargo) {
             return p.textContent = "Complete todas as informações"
-        }
+        } else {
 
-        fetch("http://localhost:3000/cadastro", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                ...dados,
-                role: cargo
-            })
-        })
-
-            .then(res => {
-                if (!res.ok) {
-                    return res.json().then(err => {
-                        throw new Error(err.message || "Erro interno");
+            try {
+                const data = await apiRequest("http://localhost:3000/cadastro", {
+                    method: "POST",
+                    credentials: "include",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        ...dados,
+                        role: cargo
                     })
-                }
-                return res.json()
-            })
-            .then(data => {
+                })
                 p.textContent = data.message
-            })
-            .catch(error => {
-                p.textContent = error.message;
-            });
+            } catch (error) {
+                p.textContent = error.message
+            }
+        }
     });
 }
 

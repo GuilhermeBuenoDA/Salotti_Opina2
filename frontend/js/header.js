@@ -16,3 +16,5 @@ categoriash.addEventListener('click', () => {
 entradah.addEventListener('click', () => {
     window.location.href = "login.html"
 })
+
+

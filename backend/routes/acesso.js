@@ -1,37 +1,41 @@
 import express from "express"
 import db from "./db.js"
 import jwt from "jsonwebtoken"
-import segredo from "./segredo.js"
 import bcrypt from 'bcrypt'
+import { verificarReq } from "../middleware/verificar.js"
 
 const roteador = express.Router()
 
 async function login(req, res) {
-    const { Email, Senha } = req.body;
+    const { email, senha } = req.body;
 
     try {
         const [usuarios] = await db.query(
             "SELECT * FROM usuarios WHERE email = ?",
-            [Email]
+            [email]
         );
 
         if (usuarios.length === 0) {
-            return res.status(401).json({ message: "Usuario ou Senha invalido" });
+            return res.status(401).json({ message: "Usuario ou senha invalido" });
         }
         const usuario = usuarios[0];
 
-        const senhaCerta = await bcrypt.compare(Senha, usuario.senha)
+        const senhaCerta = await bcrypt.compare(senha, usuario.senha)
 
         if (!senhaCerta) {
             return res.status(401).json({ message: "Usuarios ou senha errado" })
         }
 
         const token = jwt.sign(
-            { id: usuario.id, role: usuario.roles },
-            segredo,
+            { id: usuario.id, role: usuario.roles, nome: usuario.nome },
+            process.env.JWT_SECRET,
             { expiresIn: "1h" }
         )
-        return res.status(200).json({ message: "login valido", token: token, nome: usuario.nome });
+        return res.cookie("token", token,{
+            httpOnly: true,
+            sameSite: "lax",
+            secure: false
+        }).status(200).json({ message: "login valido", nome: usuario.nome });
 
     } catch (error) {
         console.log(error)
@@ -41,15 +45,15 @@ async function login(req, res) {
 
 async function cadastrar(req, res) {
 
-    const { Email, Senha, Nome, role } = req.body
+    const { email, senha, nome, role } = req.body
 
     try {
 
-        const senhaCriptografada = await bcrypt.hash(Senha, 10)
+        const senhaCriptografada = await bcrypt.hash(senha, 10)
 
         const [resultado] = await db.query(
-            "INSERT INTO usuarios(nome,email,senha,roles) VALUES(?,?,?,?)",
-            [Nome, Email, senhaCriptografada, role]
+            "INSERT INTO usuarios(nome, email, senha, roles) VALUES(?, ?, ?, ?)",
+            [nome, email, senhaCriptografada, role]
         )
         if (resultado.affectedRows === 0) {
             return res.status(401).json({ message: "Erro ao cadastrar" })
@@ -60,12 +64,12 @@ async function cadastrar(req, res) {
     } catch (erro) {
         console.error(erro)
         if (erro.code === "ER_DUP_ENTRY") {
-            res.status(400).json({ message: "Email ou Nome de usuario indisponivel" })
+            return res.status(400).json({ message: "email ou nome de usuario indisponivel" })
         }
     }
 }
 
-roteador.post("/login", login);
-roteador.post("/cadastro", cadastrar)
+roteador.post("/login", verificarReq(["email", "senha"]), login);
+roteador.post("/cadastro",verificarReq(["nome","email","senha", "role"]), cadastrar)
 
 export default roteador

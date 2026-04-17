@@ -1,6 +1,5 @@
 import express from 'express'
 import db from './db.js'
-import jwt from 'jsonwebtoken'
 
 const roteador = express.Router()
 
