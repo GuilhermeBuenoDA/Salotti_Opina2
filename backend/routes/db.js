@@ -4,9 +4,9 @@ import mysql from 'mysql2/promise';
 // dotenv.config();
 
 const db = mysql.createPool({
-    host: '172.30.1.193',
+    host: '.',
     user: 'back',
-    password: 'rrnea.@2009',
+    password: '.',
     database: 'app_db',
     port: '3306'
 })
